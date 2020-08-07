@@ -93,6 +93,31 @@ namespace Assignment4
             {
                 BmiProgressBar.Value = (int)(bmi); // set progress bar value
             }
+
+            // Display BMI report and set progress bar color as per BMI range
+            if (bmi < 18.5)
+            {
+                ResultTextBox.Text = "Underweight" + Environment.NewLine + "(less than 18.5)";
+                BmiProgressBar.ForeColor = Color.Red;
+            }
+            else if (bmi >= 18.5 && bmi < 25)
+            {
+                ResultTextBox.Text = "Normal" + Environment.NewLine + "(18.5 - 24.9)";
+                BmiProgressBar.ForeColor = Color.Green;
+            }
+            else if (bmi >= 25 && bmi < 30)
+            {
+                ResultTextBox.Text = "Overweight" + Environment.NewLine + "(25 - 29.9)";
+                BmiProgressBar.ForeColor = Color.Yellow;
+            }
+            else
+            {
+                ResultTextBox.Text = "Obese" + Environment.NewLine + "(30 or greater)";
+                BmiProgressBar.ForeColor = Color.Maroon;
+            }
         }
+
+        
     }
 }
+
