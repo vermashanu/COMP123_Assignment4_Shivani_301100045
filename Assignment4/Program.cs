@@ -16,8 +16,8 @@ namespace Assignment4
         [STAThread]
         static void Main()
         {
-            
-            Application.EnableVisualStyles();
+            // to change the default color green of progress bar to some other color according to bmi range
+           // Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new BMICalculatorForm());
         }
