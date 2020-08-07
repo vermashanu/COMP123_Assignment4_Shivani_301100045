@@ -50,13 +50,49 @@ namespace Assignment4
                     bmi = weight / (height * height);
                 }
 
+                // Display calculated BMI
+                BmiTextBox.Text = bmi.ToString("N2");
 
+                // Call DisplayResult() method to display BMI status and update progress bar
+                DisplayResult(bmi);
+            }
+        }
+
+        /// <summary>
+        /// Set controls value as defult
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ResetButton_Click(object sender, EventArgs e)
+        {
+            HeightTextBox.Clear();
+            WeightTextBox.Clear();
+            BmiTextBox.Clear();
+            ResultTextBox.Clear();
+            BmiProgressBar.Value = 0;
+            ImperialRadioButton.Checked = true;
+            ImperialRadioButton.Focus();
+        }
+
+        /// <summary>
+        /// Display BMI result and update progress bar value and color
+        /// </summary>
+        /// <param name="bmi"></param>
+        private void DisplayResult(double bmi)
+        {
+            // If bmi greater than MAX(100) value
+            if (bmi > 100)
+            {
+                BmiProgressBar.Value = 100;
+            }
+            else if (bmi < 0) // if bmi less than MIN(0) value
+            {
+                BmiProgressBar.Value = 0;
+            }
+            else
+            {
+                BmiProgressBar.Value = (int)(bmi); // set progress bar value
             }
         }
     }
 }
-
-        
-
-        
-

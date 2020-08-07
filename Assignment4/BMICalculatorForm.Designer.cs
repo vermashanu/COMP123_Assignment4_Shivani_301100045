@@ -199,7 +199,7 @@
             this.ResetButton.TabIndex = 11;
             this.ResetButton.Text = "Reset";
             this.ResetButton.UseVisualStyleBackColor = true;
-            //this.ResetButton.Click += new System.EventHandler(this.ResetButton_Click);
+            this.ResetButton.Click += new System.EventHandler(this.ResetButton_Click);
             // 
             // BMICalculatorForm
             // 
